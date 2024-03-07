@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa Deportiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav id="menu">
+            <ul>
+                <li><a href="#our-store">Nuestra Tienda Online</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#about-us">Acerca de Nosotros</a></li>
+                <li><a href="#Solicitud">Solicitud de Servicio</a></li>
+                <li><a href="#Cuento">Crea tú Cuento</a></li>
+                <li><a href="#contact-us">Contáctenos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="our-store">
+        <h1>Nuestra Tienda Online</h1>
+        <div class="slider">
+            <img src="Images\alexander-redl.jpg" alt="Placeholder image">
+            <img src="Images\munbaik-cycling.jpg" alt="Placeholder image">
+            <img src="Images\munbaik-cycling-clothing-g.jpg" alt="Placeholder image">
+        </div>
+       
+
+    </section>
+    
+    <section id="services">
+        <h2>Servicios</h2>
+        <ul>
+            <li>Personalización de productos</li>
+            <li>Venta de productos</li>
+            <li>Cotizaciones</li>
+        </ul>
+    </section>
+    
+    <section id="about-us">
+        <h2>Acerca de Nosotros</h2>
+        <p>Somos una tienda de ropa deportiva comprometida con la calidad, ofrecemos servicio personalizado para lograr  una mejor experiencia y la satisfacción de nuestros clientes.</p>
+        <h2>Nuestra Misión</h2>
+        <p>Es proporcionar productos de alta calidad que promuevan un estilo de vida activo y saludable</p>
+        <h2>Nuestra Visión</h2>
+        <p>Ser una empresa reconocida en nuestro país<p>
+
+    </section>
+	
+    <section id="Solicitud" >
+        <h2>Solicitud de Servicio</h2>
+        <form id="solicitudForm" method="post" action="mostrar_datos.html"> <!-- Cambiar 'procesar_formulario.php' por el nombre del archivo donde deseas procesar el formulario -->
+            <label for="nombreCompleto">Nombres y Apellidos:</label>
+            <input type="text" id="nombreCompleto" name="nombreCompleto" required><br><br>
+            
+            <label for="correoElectronico">Correo Electrónico:</label>
+            <input type="email" id="correoElectronico" name="correoElectronico" required><br><br>
+            
+            <label for="numeroCelular">Número de Celular:</label>
+            <input type="tel" id="numeroCelular" name="numeroCelular" pattern="[0-9]{10}" required><br><br>
+            
+            <label for="servicioSolicitado">Servicio Solicitado:</label>
+            <select id="servicioSolicitado" name="servicioSolicitado" required>
+                <option value="Personalización">Personalización</option>
+                <option value="Pedido Mayorista">Pedido Mayorista</option>
+                <option value="Devolución">Devolución</option>
+            </select><br><br>
+            
+            <button type="submit" id="enviarDatos">Enviar datos</button>
+            <button type="button" id="cancelar">Cancelar</button>
+        </form>
+    </section>
+        
+    <section id="Cuento">
+    <form id="cuentoForm" method="post">
+        <h1>Crea tú Cuento</h1>
+
+        <label for="nombreCompleto">Nombres y Apellidos:</label>
+        <input type="text" id="nombreCompleto" name="nombreCompleto" required><br><br>
+        
+        <label for="apodo">Apodo:</label>
+        <input type="text" id="apodo" name="apodo" required><br><br>
+        
+        <label for="colorCabello">Color de Cabello:</label>
+        <input type="text" id="colorCabello" name="colorCabello" required><br><br>
+        
+        <label for="colorOjos">Color de Ojos:</label>
+        <input type="text" id="colorOjos" name="colorOjos" required><br><br>
+        
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br><br>
+        
+        <label for="hobby">Hobby:</label>
+        <input type="text" id="hobby" name="hobby" required><br><br>
+        
+        <button type="submit">Continuar</button>
+    </form>
+
+    <div id="cuentoResultado" style="display:none;"></div>
+
+
+        </form>
+ 
+
+    
+        <footer>
+            <section id="contact-us" >
+                <p>¡Estamos aquí para servirte! Contáctanos a través de:</p></p>
+                <p>Teléfono: 57-(604) 2887090</p>
+                <p>Celular: 322-4923321</p>
+                <p>WhatsApp: 322-4923456</p>
+                <p>Dirección: Calle 45 A 65 Sur 50, Ciudad Sabaneta, País Colombia</p>
+            </section>
+    
+        
+        </footer>
+        <script src="script.js"></script>
+        <script>   
+        document.getElementById('cancelar').addEventListener('click', function() {
+            window.location.href = "index.html"; // Cambia "index.html" por la página inicial
+        });
+       
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            // Obtener los valores de los parámetros
+            const nombreCompleto = urlParams.get('nombreCompleto');
+            const correoElectronico = urlParams.get('correoElectronico');
+            const numeroCelular = urlParams.get('numeroCelular');
+            const servicioSolicitado = urlParams.get('servicioSolicitado');
+
+            // Mostrar los datos en la página
+            const datosDiv = document.getElementById('datos');
+            datosDiv.innerHTML = `
+                <p><strong>Nombre y Apellidos:</strong> ${nombreCompleto}</p>
+                <p><strong>Correo Electrónico:</strong> ${correoElectronico}</p>
+                <p><strong>Número de Celular:</strong> ${numeroCelular}</p>
+                <p><strong>Servicio Solicitado:</strong> ${servicioSolicitado}</p>
+            `;
+        });
+             
+        </script>
+    </body>
+</html>

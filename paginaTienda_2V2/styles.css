@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 1em;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#menu ul li {
+    display: inline;
+    margin-right: 1em;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    background-color: #333;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 4em;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.slider {
+    position: relative;
+    max-width: 600px; /* Adjust the max-width as needed */
+    padding: 650px 0px 0px 0px;
+}
+
+.slider img {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    bottom: 200px;
+    width: 100%;
+    transition: opacity 0.5s;
+}
+
+.slider img:not(:first-child) {
+    opacity: 0;
+}
+
+footer {
+    position: sticky;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #00a0d9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0077b3;
+}
+
+#cuentoResultado {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#cuentoResultado h2 {
+    color: #333;
+}
+
+#cuentoResultado p {
+    color: #666;
+}

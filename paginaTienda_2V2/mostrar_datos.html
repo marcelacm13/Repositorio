@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Formulario</title>
+    <style>
+        /* Estilos de la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Datos del Formulario</h1>
+    <table>
+        <tr>
+            <th>Nombres y Apellidos</th>
+            <th>Correo Electrónico</th>
+            <th>Número de Celular</th>
+            <th>Servicio Solicitado</th>
+        </tr>
+        <tr id="datosFormulario">
+            <!-- Aquí se mostrarán los datos del formulario -->
+        </tr>
+    </table>
+
+    <button id="volverBtn">Volver a la página principal</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            // Obtener los valores de los parámetros
+            const nombreCompleto = urlParams.get('nombreCompleto');
+            const correoElectronico = urlParams.get('correoElectronico');
+            const numeroCelular = urlParams.get('numeroCelular');
+            const servicioSolicitado = urlParams.get('servicioSolicitado');
+
+            // Obtener la fila de la tabla donde se mostrarán los datos
+            const filaDatos = document.getElementById('datosFormulario');
+
+            // Crear celdas de datos y agregar los valores del formulario
+            const celdaNombre = document.createElement('td');
+            celdaNombre.textContent = nombreCompleto;
+            filaDatos.appendChild(celdaNombre);
+
+            const celdaCorreo = document.createElement('td');
+            celdaCorreo.textContent = correoElectronico;
+            filaDatos.appendChild(celdaCorreo);
+
+            const celdaCelular = document.createElement('td');
+            celdaCelular.textContent = numeroCelular;
+            filaDatos.appendChild(celdaCelular);
+
+            const celdaServicio = document.createElement('td');
+            celdaServicio.textContent = servicioSolicitado;
+            filaDatos.appendChild(celdaServicio);
+
+            // Evento para el botón "Volver a la página principal"
+            document.getElementById('volverBtn').addEventListener('click', function() {
+                window.location.href = "index.html"; // Cambia "index.html" por la página inicial
+            });
+        });
+    </script>
+</body>
+</html>
